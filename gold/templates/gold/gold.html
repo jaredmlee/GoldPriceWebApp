@@ -14,8 +14,21 @@
                 <div class="links">
                         <a href="plan" class="link">Software Dev Plan</a>
                 </div>
-                <div class="stuff-box yellow">
-
+                <div class="stuff-box gold">
+                        <h2>Calculate The Price Of Gold!</h2>
+                        <h3>Enter a number and then select a unit, and calculate your weights worth in gold!</h3>
+                        <input type="number" id = "numInput">
+                        <select id="unitSelection">
+                                <option>U.S Ton</option>
+                                <option>Gram</option>
+                                <option>Troy Oz</option>
+                                <option>Kilogram</option>
+                                <option>Imperial Pound</option>
+                                <option>Ounce</option>
+                        </select>
+                        <button type="button">=</button>
+                        <p id="price">Please wait while we get the current price of gold...</p>
                 </div>
+                <script src="{% static 'gold/script.js' %}"></script>
         </body>
 </html>
