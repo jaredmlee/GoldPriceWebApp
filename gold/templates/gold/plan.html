@@ -1,0 +1,114 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="utf-8">
+                <title>Plan</title>
+                <link rel="stylesheet" href="{% static 'gold/style.css' %}">
+        </head>
+        <body>
+                <div class="heading">
+                        <h>Plan!</h>
+                </div>
+                <div class="links">
+                        <a href="index" class="link">Gold</a>
+                </div>
+                <p class="centered-sub-head"> It is currently {{now}}</p>
+                <div class="stuff-box gray">
+                        <h1 >Phase 0: Requirements Specification</h1>
+                        <p>
+                                This project will contain 2 apps, the RESTful unit conversion Api, and the gold page
+                                that uses that api and has all the ui for the project.
+                        </p>
+                        <p>
+                                Create a django app called 'unitconv'. This will provide a web api that performs
+                                conversions between units. This app will have a view function called convert, which
+                                will respond to get request from a form. This form will provide the following parameters
+                                to the url: from - a string that represents the type of units of the input, value -
+                                a non-negative float representing the number of from units, to - a string representing
+                                the type of units the user wants value converted into. The result of the request will be
+                                a JSON object. When a user makes an invalid query, return a JSON object with an error
+                                property that has a string of the error message.
+                        </p>
+                        <p>
+                                The calculations are made by referring to a Django model of conversion factors. Create
+                                a data migration to initialize the database with the necessary conversion factors. The
+                                unit conversion API must support the following units: U.S. ton, gram, troy ounce,
+                                kilogram, imperial pound, ounce. The API must be capable of converting between all
+                                supported units.
+                        </p>
+                        <p>
+                                Next, create another app called gold the presents a single html page allowing the user
+                                to put a weight and a unit and calculate the worth in gold. The page must have instructions
+                                on how to use the app, an input to accept weight, a select drop-down to pick the unit,
+                                a button that performs the conversion when clicked, a paragraph element that displays
+                                the current price of gold. Before it is retrieved from nasdaq, have it say "please wait".
+                                The page will automagically query Nasdaq Data Link one time upon loading the page. Use
+                                fetch() to get the price of gold in us dollars and store it in a global variable so its
+                                available when the button is clicked. The button will activate a callback function which
+                                will do the following. Read the input and validate that it is acceptable. Make a fetch()
+                                request to the unitconv app that results in the users weight conversion into troy ounces.
+                                Multiply that amount by the market price of gold. Create a new div to display the result,
+                                including a time stamp. Clicking a div removes it from the dom.
+                        </p>
+                </div>
+                <div class="stuff-box orange">
+                        <h1 >Phase 1: Design</h1>
+                        <h2>Unitconv view function design:</h2>
+                        <p>Basically cycle through the response.get.headers and validate that the correct params are in</p>
+                        <p>Use the inputs to call the function that will do the unit conversions</p>
+                        <p>return a json response that converts the python dictionary to a json response</p>
+                        <h2>Javascript file</h2>
+                        <p>Outside of calculate(), fetch the data from nasdaq and display it to the dom</p>
+                        <p>Get the number from the input and validate that it is a proper number</p>
+                        <p>Store the url to the other app in a variable</p>
+                        <p>use fetch to get the json data</p>
+                        <p>use that data to populate the div that you will display on the webpage to give the results.</p>
+                        <h2>Database</h2>
+                        <p>Create a model that has all the various unit conversions</p>
+                        <p>Make a database migration script to populate this table.</p>
+
+                </div>
+                <div class = "green stuff-box">
+                        <h1 >Phase 2: Implementation</h1>
+                        <p>Implementation had a lot of hiccups and problems, but it was also a lot of fun. There were so
+                                many little requirments that had to be fulfilled and so many ways that each of those could
+                                go wrong. For example, the delete function was giving me some serious trouble for a while,
+                                but was just a misunderstanding of how to access the id for the specific form I was wanting
+                                to delete. Also, pretty much all of the database things took a while to figure out, mostly
+                                because it is a kind of difficult to track what is happening with the data to understand
+                                what is going wrong. This assignment took me way longer than most assignments, and I think
+                                that was because it was such a large project, and there were so many things that were
+                                going wrong that were really hard to debug
+                        </p>
+                </div>
+                <div class="magenta stuff-box">
+                        <h1>Phase 3: Testing and Debugging</h1>
+                        <p> 95% of the debugging was done during implementation. This is because pretty much everyhting that
+                                could go wrong did, and I had to find ways to fix it, so in the process of doing that
+                                pretty much every test case was tested. For testing, I made sure that every kind of operation
+                                worked and that it could all be saved and deleted from the database without anu issues.
+                                I also tested it by opening up the dev tools and checking that even when you change the
+                                code to accept other kinds of input, it will still work.
+
+                        </p>
+
+                </div>
+                <div class = "blue stuff-box">
+                        <h1>Phase 4: Deployment</h1>
+                        <p>verified and validated!</p>
+                </div>
+                <div class = "black stuff-box">
+                        <h1>Phase 5: Maintenance</h1>
+                        <p> I'm happy with the way my code works, and I think that it meets all the requirements.
+                                However, there are some parts of the project that I am not too proud of because,
+                                although they work, they reek of code smells. I have lots of repeat code that was copy
+                                and pasted, but it was in places where I did not know how I could have achieved it any
+                                other way. But otherwise, I am happy with the code, and if I had more time, maybe I would
+                                try and refactor the code to be more readable in spots.
+                        </p>
+                </div>
+
+        </body>
+</html>
