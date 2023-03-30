@@ -19,15 +19,16 @@
                         <h3>Enter a number and then select a unit, and calculate your weights worth in gold!</h3>
                         <input type="number" id = "numInput">
                         <select id="unitSelection">
-                                <option>U.S Ton</option>
-                                <option>Gram</option>
-                                <option>Troy Oz</option>
-                                <option>Kilogram</option>
-                                <option>Imperial Pound</option>
-                                <option>Ounce</option>
+                                <option>T</option>
+                                <option>g</option></option>
+                                <option>t_oz</option>
+                                <option>kg</option>
+                                <option>lb</option>
+                                <option>oz</option>
                         </select>
-                        <button type="button">=</button>
+                        <button type="button" onclick="calculate()">=</button>
                         <p id="price">Please wait while we get the current price of gold...</p>
+                        <p id="error"></p>
                 </div>
                 <script src="{% static 'gold/script.js' %}"></script>
         </body>
