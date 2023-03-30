@@ -8,3 +8,4 @@ class Operator(models.Model):
     kiloToTroy = models.FloatField()
     poundToTroy = models.FloatField()
     ounceToTroy = models.FloatField()
+
