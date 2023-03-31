@@ -1,5 +1,5 @@
 
-var URL = "https://data.nasdaq.com/api/v3/datasets/LBMA/GOLD?start_date=2023-03-28&end_date=2023-03-28&api_key=Gn9_Btq48px28EnUeziH";
+var URL = "https://data.nasdaq.com/api/v3/datasets/LBMA/GOLD?limit=1&api_key=Gn9_Btq48px28EnUeziH";
 fetch(URL)
     .then(resp => resp.json())
     .then(json => {
@@ -11,7 +11,7 @@ fetch(URL)
 function calculate(){
     let input = document.querySelector('#numInput').value;
     let unit = document.querySelector('#unitSelection').value;
-    if (Number.isNaN(Number(input))){
+    if (Number.isNaN(Number(input)) || input<0){
         document.querySelector('#error').textContent = "Please provide a valid number!!!!";
 
     }

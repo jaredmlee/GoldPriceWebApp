@@ -72,26 +72,23 @@
                 </div>
                 <div class = "green stuff-box">
                         <h1 >Phase 2: Implementation</h1>
-                        <p>Implementation had a lot of hiccups and problems, but it was also a lot of fun. There were so
-                                many little requirments that had to be fulfilled and so many ways that each of those could
-                                go wrong. For example, the delete function was giving me some serious trouble for a while,
-                                but was just a misunderstanding of how to access the id for the specific form I was wanting
-                                to delete. Also, pretty much all of the database things took a while to figure out, mostly
-                                because it is a kind of difficult to track what is happening with the data to understand
-                                what is going wrong. This assignment took me way longer than most assignments, and I think
-                                that was because it was such a large project, and there were so many things that were
-                                going wrong that were really hard to debug
+                        <p>
+                                Implementation went somewhat more smooth than previous assignments. My biggest problem
+                                was in finding the correct url to navigate to in order to get only the most recent
+                                data from nasdaq. I had it hard coded in to do the 28th, and finished the whole assignment
+                                in that way, but later found out I had to use limit=1 and that would give me what I wanted.
+                                I also wonder if I did the database stuff differently then intended, because I ended up
+                                having a block of a bunch of if statements. But overall, implementation went well.
                         </p>
                 </div>
                 <div class="magenta stuff-box">
                         <h1>Phase 3: Testing and Debugging</h1>
-                        <p> 95% of the debugging was done during implementation. This is because pretty much everyhting that
-                                could go wrong did, and I had to find ways to fix it, so in the process of doing that
-                                pretty much every test case was tested. For testing, I made sure that every kind of operation
-                                worked and that it could all be saved and deleted from the database without anu issues.
-                                I also tested it by opening up the dev tools and checking that even when you change the
-                                code to accept other kinds of input, it will still work.
-
+                        <p>
+                                There was a lot of debugging that needed to be done to ensure that everything was being
+                                done properly. I tested every single unit conversion one to another and made sure they
+                                were working on the server side. Then I validated that the client side was working and
+                                always gave me the correct numbers. I also made sure that when invalid input was given,
+                                that the correct error messages were given.
                         </p>
 
                 </div>
@@ -101,12 +98,15 @@
                 </div>
                 <div class = "black stuff-box">
                         <h1>Phase 5: Maintenance</h1>
-                        <p> I'm happy with the way my code works, and I think that it meets all the requirements.
-                                However, there are some parts of the project that I am not too proud of because,
-                                although they work, they reek of code smells. I have lots of repeat code that was copy
-                                and pasted, but it was in places where I did not know how I could have achieved it any
-                                other way. But otherwise, I am happy with the code, and if I had more time, maybe I would
-                                try and refactor the code to be more readable in spots.
+                        <p>
+                                Some parts of my code are less than perfect for sure. For example, with all the unit
+                                conversions, I have a function that is a giant block of if statements to check what kind
+                                of unit they input, and then get that object depending on what they chose. I feel like
+                                there is a more concise way to do that, but I am not really sure what there is. Also, I
+                                procrastinated this assignment a bit, so I did not dedicate a ton of time to testing, so
+                                I am sure if someone spent enough time on this app they would be able to find a way to
+                                break. However, as far as I am aware, it all works properly and overall I am satisfied
+                                with my work. 
                         </p>
                 </div>
 
